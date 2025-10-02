@@ -23,22 +23,22 @@
                 </div>
 
             </div>
-            <div class="formulario lex-fill ms-3">
+            <div class="formulario lex-fill ms-3" id="formulario">
                 <form>
                     <div class="row mb-4">
                         <div class="col">
-                            <input type="text" id="nome" class="form-control-plaintext "  placeholder="Nome" name="nome">
+                            <input type="text" id="nome" class="form-control-plaintext "  placeholder="Nome" name="nome" required>
                         </div>
                         <div class="col">
-                            <input type="text" id="data" class="form-control-plaintext"  placeholder="Data de nascimento" name="data">
+                            <input type="text" id="data" class="form-control-plaintext"  placeholder="Data de nascimento" name="data" required>
                         </div>
                     </div>
                     <div class="mb-4">
-                        <input type="text" id="sobrenome" class="form-control-plaintext "  placeholder="Sobrenome" name="sobrenome">
+                        <input type="text" id="sobrenome" class="form-control-plaintext "  placeholder="Sobrenome" name="sobrenome" required>
                     </div>
                     <div class="row mb-4">
                         <div class="col">
-                            <input type="email" id="email" class="form-control-plaintext"  placeholder="Email" name="email">
+                            <input type="email" id="email" class="form-control-plaintext"  placeholder="Email" name="email" required>
                         </div>
 
                         <div class="col">
@@ -47,7 +47,7 @@
                     </div>
                     <div class="usuarios text-muted mb-4">
                         <label for="opcao" class="form-label">Tipo de usuario</label>
-                        <select id="opcao" class="form-select">
+                        <select id="opcao" class="form-select" required>
                             <option  selected  class="text-muted">Selecione...</option>
                             <option value="Estudante">Estudante</option>
                             <option value="Profissional">Profissional</option>
@@ -56,26 +56,26 @@
                     </div>
                     <div class="row mb-4">
                         <div class="col">
-                            <input type="text" id="cep" class="form-control-plaintext"  placeholder="CEP" name="cep">
+                            <input type="text" id="cep" class="form-control-plaintext"  placeholder="CEP" name="cep" required>
                         </div>
 
                         <did class="col">
-                            <input type="text" id="bairro" class="form-control-plaintext"  placeholder="Bairro" name="bairro">
+                            <input type="text" id="bairro" class="form-control-plaintext"  placeholder="Bairro" name="bairro" required>
                         </did>
 
                         <div class="col">
-                            <input type="text" id="rua" class="form-control-plaintext"  placeholder="Rua" name="rua">
+                            <input type="text" id="rua" class="form-control-plaintext"  placeholder="Rua" name="rua" required>
                         </div>
                     </div>
 
                     <div class="card-footer" style="width:300px;">
                         <label class="form-check-label mb-3">
-                            <input class="form-check-input" type="checkbox" name="nao sou robo">
+                            <input class="form-check-input" type="checkbox" name="nao sou robo" required>
                             Não sou um robô 
                         </label>
                     </div>
 
-                    <button type="button" class="btn btn-primary d-flex ms-auto" onclick="window.location.href='cadastro_parte_2.html'" id="proximo">Proximo</button>
+                    <button type="submit" class="btn btn-primary d-flex ms-auto" onclick="window.location.href='cadastro_parte_2.html'" id="proximo">Proximo</button>
                 </form>
             </div>
         </div>
