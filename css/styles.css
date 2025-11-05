@@ -21,10 +21,13 @@ body {
 
 
 .navbar button {
-  display: flex;
-    background-color: transparent; /* fundo transparente */
-    color:white;                /* cor do texto */
-    border: none;               /* sem borda */
+    display: flex;
+    background-color: transparent;
+    /* fundo transparente */
+    color: white;
+    /* cor do texto */
+    border: none;
+    /* sem borda */
     padding: 8px 18px;
     margin: 3px;
     font-weight: 600;
@@ -35,9 +38,10 @@ body {
 }
 
 /* Efeito hover */
-.navbar button:hover { 
-    color: #0b0f27;             
-    transform: scale(1.05);    /* leve aumento */
+.navbar button:hover {
+    color: #0b0f27;
+    transform: scale(1.05);
+    /* leve aumento */
 }
 
 /* Remove o estilo padrão do botão */
@@ -101,7 +105,8 @@ main.container {
     main.container {
         flex-direction: column;
         text-align: center;
-        padding-top: 100px; /* para não colar na navbar */
+        padding-top: 100px;
+        /* para não colar na navbar */
     }
 
     .texto h2 {
