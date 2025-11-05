@@ -1,25 +1,25 @@
-document.getElementById("entrar").addEventListener("click", () =>{
+document.getElementById("entrar").addEventListener("click", () => {
     verificarlogin();
 
 });
 
-async function verificarlogin(){
+async function verificarlogin() {
     var email = document.getElementById("email").value;
     var senha = document.getElementById("senha").value;
 
     const fd = new FormData();
-    fd.append("email",email);
-    fd.append("senha",senha);
+    fd.append("email", email);
+    fd.append("senha", senha);
 
-    const retorno = await fetch("../php/profission_login.php",{
+    const retorno = await fetch("../php/profission_login.php", {
         method: "POST",
         body: fd
     });
     const resposta = await retorno.json();
-    if(resposta.status == "Ok"){
+    if (resposta.status == "Ok") {
         alert("Logado");
         window.location.href = "../html/home_logado.html";
-    }else{
+    } else {
         alert("Credenciais invalidas")
     }
 }
