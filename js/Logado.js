@@ -10,6 +10,6 @@ async function logoff() {
     const resposta = await retorno.json();
     if (resposta.status == "ok") {
         alert("volte sempre!")
-        window.location.href = "../login/";
+        window.location.href = "../html/Login.html";
     }
 }
