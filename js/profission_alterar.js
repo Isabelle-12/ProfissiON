@@ -1,6 +1,5 @@
 document.addEventListener("DOMContentLoaded", () => {
-    // Não precisamos mais verificar a URL.
-    // Apenas carregamos os dados do usuário que está logado (via sessão no PHP).
+    valida_sessao();
     fase1();
 });
 
