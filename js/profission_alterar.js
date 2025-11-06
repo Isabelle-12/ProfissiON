@@ -46,11 +46,6 @@ async function fase2() {
     var nova_senha = document.getElementById("nova_senha").value;
     var confirmar_nova_senha = document.getElementById("confirmar_nova_senha").value;
 
-    // Validações (OK)
-    if (!nome || !email || !data_nascimento || !endereco || !telefone) {
-        alert("É necessário preencher todos os campos (exceto os de senha).");
-        return;
-    }
     if (nova_senha.length > 0 && nova_senha !== confirmar_nova_senha) {
         alert("As novas senhas não coincidem!");
         return;

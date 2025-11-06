@@ -17,7 +17,7 @@ if (isset($_SESSION['id_conta'])) {
     $telefone = isset($_POST['telefone']) ? $_POST['telefone'] : '';
     $nova_senha = isset($_POST['nova_senha']) ? $_POST['nova_senha'] : '';
 
-    // Opcional: verifique se o usuário existe (não checamos senha aqui)
+    // Opcional: verifique se o usuário existe
     $stmt_exist = $conexao->prepare("SELECT id_conta FROM conta WHERE id_conta = ?");
     $stmt_exist->bind_param("i", $id_conta);
     $stmt_exist->execute();
