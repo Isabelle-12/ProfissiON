@@ -22,7 +22,7 @@
             $tabela[] = $linha;
         }
         $retorno = [
-            'status'    => 'Ok', 
+            'status'    => 'ok', 
             'mensagem'  => 'Sucesso, registro encontrado.', 
             'data'      => $tabela
         ];
@@ -30,7 +30,7 @@
         $retorno = [
             'status'    => 'No', 
             'mensagem'  => 'Não há registros.', 
-            'data'      => $tabela
+            'data'      => []
         ];
     }
 

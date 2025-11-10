@@ -13,7 +13,7 @@
 
         if($stmt -> affected_rows > 0){
             $retorno = [
-                'status'    => 'Ok', 
+                'status'    => 'ok', 
                 'mensagem'  => 'Registro Excluido', 
                 'data'      => []
             ];

@@ -3,14 +3,14 @@ document.addEventListener("DOMContentLoaded", () => {
 });
 
 document.getElementById("novo").addEventListener("click", () => {
-    window.location.href = 'profissao_novo.html';
+    window.location.href = '../html/profissao_novo.html';
 });
 
 async function excluir(id_profissao){
     const retorno = await fetch("../php/profissao_excluir.php?id_profissao=" + id_profissao);
     const resposta = await retorno.json();
     
-    if(resposta.status == "Ok"){
+    if(resposta.status == "ok"){
         alert(resposta.mensagem);
         window.location.reload();
     }else{
@@ -22,7 +22,7 @@ async function buscar(){
     const retorno = await fetch("../php/profissao_get.php");
     const resposta = await retorno.json();
 
-    if(resposta.status == "Ok"){
+    if(resposta.status == "ok"){
         preencherTabela(resposta.data);
     }
 }

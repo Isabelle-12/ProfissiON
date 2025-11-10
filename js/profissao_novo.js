@@ -1,10 +1,13 @@
 document.addEventListener("DOMContentLoaded", () => {
     valida_sessao();
+
+    document.getElementById("form-profissao").addEventListener("submit", (e) => {
+        e.preventDefault();     
+        profissao();
+    });
 });
 
-document.getElementById("adicionar").addEventListener("click", () =>{
-    profissao();
-});
+
 
 async function profissao(){
     var nome_profissao      = document.getElementById("nome_profissao").value;
@@ -23,12 +26,12 @@ async function profissao(){
     fd.append("mercado_trabalho",mercado_trabalho);
 
     const retorno = await fetch("../php/profissao_novo.php",{
-        method: 'POST',
-        body: fd
-    });
+            method: 'POST',
+            body: fd
+        });
 
     const resposta = await retorno.json();
-    if(resposta.status == "Ok"){
+    if(resposta.status == "ok"){
         alert("Sucesso: " + resposta.mensagem);
         window.location.href = '../html/profissao.html';
     }else{
