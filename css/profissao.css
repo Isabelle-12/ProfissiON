@@ -1,20 +1,106 @@
-.card-profissao {
-    margin-bottom: 20px;
+body {
+    min-height: 100vh;
+    background: linear-gradient(180deg, #7a2bf2, #0b0f27);
+    color: #fff;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    overflow-x: hidden;
 }
 
-.card-profissao .card-body {
-    height: 100%;
+/* === NAVBAR === */
+
+.card{
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(15px);
+    -webkit-backdrop-filter: blur(15px);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.25);
+    color: #fff;
 }
 
-.card-profissao h5 {
+.navbar button {
+    display: flex;
+    background-color: transparent;
+    /* fundo transparente */
+    color: white;
+    /* cor do texto */
+    border: none;
+    /* sem borda */
+    padding: 8px 18px;
+    margin: 3px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    gap: 10px;
+
+}
+
+/* Efeito hover */
+.navbar button:hover {
+    color: #0b0f27;
+    transform: scale(1.05);
+    /* leve aumento */
+}
+
+/* Remove o estilo padrão do botão */
+.navbar button:focus {
+    outline: none;
+    box-shadow: none;
+}
+/* === TABELA ESTILO GLASSMORPHISM === */
+.tabela-profissao {
+    width: 100%;
+    border-collapse: collapse;
+    border-radius: 12px;
+    overflow: hidden;
+    margin-top: 20px;
+
+    /* mesmo estilo do .card */
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    border: 1px solid rgba(255, 255, 255, 0.25);
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.25);
+    color: #fff;
+}
+
+.tabela-profissao th {
+    background: rgba(0, 0, 0, 0.3);
+    padding: 12px;
+    text-transform: uppercase;
+}
+
+.tabela-profissao td {
+    padding: 10px;
+}
+
+.tabela-profissao tbody tr:hover {
+    background: rgba(255, 255, 255, 0.15);
+    cursor: pointer;
+    transition: 0.2s;
+}
+
+/* Botões da tabela */
+.btn-acao {
+    padding: 6px 12px;
+    border-radius: 6px;
+    border: none;
+    cursor: pointer;
+    transition: 0.3s;
     font-weight: bold;
 }
 
-.card-profissao p {
-    font-size: 0.9rem;
+.btn-alterar {
+    background: #4d4ad8;
+    color: #ffffff;
 }
 
-.card-img-top {
-    max-height: 200px;
-    object-fit: cover;
+.btn-excluir {
+    background: #9055c0;
+    color: #fff;
+}
+
+.btn-acao:hover {
+    transform: scale(1.05);
 }

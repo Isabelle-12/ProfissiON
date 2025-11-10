@@ -3,7 +3,7 @@ document.addEventListener("DOMContentLoaded", () => {
 });
 
 document.getElementById("cadastrar").addEventListener(
-    "click", function () {
+    "click",  () => {
         cadastro();
     }
 );
@@ -26,7 +26,7 @@ async function cadastro() {
         const resposta = await retorno.json();
         if (resposta.status == "Ok") {
             alert("Sucesso!" + resposta.mensagem);
-            window.location.href = "../html/home_logado.html";
+            window.location.href = "../html/Login.html";
         } else {
             alert("Erro!" + resposta.mensagem);
         }
