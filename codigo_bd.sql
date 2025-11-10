@@ -448,5 +448,9 @@ CREATE TABLE log_acao_administrador (
   FOREIGN KEY (id_conteudo) REFERENCES conteudo(id_conteudo)
 );
 
+ALTER TABLE profissao MODIFY id_subcategoria_profissao INT NULL;
+ALTER TABLE profissao MODIFY id_requisitos_experiencia INT NULL;
+ALTER TABLE profissao MODIFY id_perspectivas_futuras INT NULL;
+ALTER TABLE profissao MODIFY id_nivel_de_formacao INT NULL;
 
 

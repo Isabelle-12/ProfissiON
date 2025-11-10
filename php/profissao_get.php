@@ -7,7 +7,7 @@
     ];
 
     if(isset($_GET['id_profissao'])){
-        $stm = $conexao-> prepare("SELECT * FROM profissao where id_profissao = ?");
+        $stmt = $conexao-> prepare("SELECT * FROM profissao where id_profissao = ?");
         $stmt->bind_param("i",$_GET['id_profissao']);
     }else{
         $stmt = $conexao-> prepare("SELECT * FROM profissao");

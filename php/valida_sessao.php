@@ -3,7 +3,7 @@
 
     if (isset($_SESSION['email'])) {
         $retorno = [
-            'status'        => 'Ok',
+            'status'        => 'ok',
             'mensagem'      => '',
             'data'          => []
         ];

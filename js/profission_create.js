@@ -1,12 +1,7 @@
-document.addEventListener("DOMContentLoaded", () => {
-    valida_sessao();
-});
+document.getElementById("cadastrar").addEventListener("click",  () => {
+    cadastro();
 
-document.getElementById("cadastrar").addEventListener(
-    "click",  () => {
-        cadastro();
-    }
-);
+});
 
 async function cadastro() {
     var nome = document.getElementById("nome").value;
@@ -25,7 +20,6 @@ async function cadastro() {
         });
         const resposta = await retorno.json();
         if (resposta.status == "Ok") {
-            alert("Sucesso!" + resposta.mensagem);
             window.location.href = "../html/Login.html";
         } else {
             alert("Erro!" + resposta.mensagem);

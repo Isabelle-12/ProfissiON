@@ -23,45 +23,34 @@ async function buscar(){
     const resposta = await retorno.json();
 
     if(resposta.status == "ok"){
-        preencherTabela(resposta.data);
+        preencherCards(resposta.data);
     }
 }
 
-function preencherTabela(tabela){
-    var html = `
-        <table class="tabela-profissao">
-            <thead>
-                <tr>
-                    <th> Nome </th>
-                    <th> Área </th>
-                    <th> Descrição </th>
-                    <th> Salário Médio </th>
-                    <th> Formação </th>
-                    <th> Mercado </th>
-                    <th> # </th>
-                </tr>
-            </thead>
-            <tbody>`;
+function preencherCards(lista){
+    let html = '<div class="row g-3">';
 
-    for(var i = 0; i < tabela.length; i++){
+    lista.forEach(item => {
         html += `
-            <tr>
-                <td>${tabela[i].nome_profissao}</td>
-                <td>${tabela[i].area}</td>
-                <td>${tabela[i].descricao}</td>
-                <td>${tabela[i].salario_medio}</td>
-                <td>${tabela[i].nivel_formacao}</td>
-                <td>${tabela[i].mercado_trabalho}</td>
-                <td>
-                    <button class="btn-acao btn-alterar" onclick="window.location.href='profissao_alterar.html?id=${tabela[i].id_profissao}'">Alterar</button>
-                    <button class="btn-acao btn-excluir" onclick="excluir(${tabela[i].id_profissao})">Excluir</button>
-                </td>
-            </tr>`;
-    }
+            <div class="col-md-4">
+                <div class="card shadow-sm h-100">
+                    <div class="card-body">
+                        <h5 class="card-title">${item.nome_profissao}</h5>
+                        <p class="card-text"><strong>Área:</strong> ${item.area}</p>
+                        <p class="card-text"><strong>Descrição:</strong> ${item.descricao}</p>
+                        <p class="card-text"><strong>Salário Médio:</strong> ${item.salario_medio}</p>
+                        <p class="card-text"><strong>Formação:</strong> ${item.nivel_formacao}</p>
+                        <p class="card-text"><strong>Mercado:</strong> ${item.mercado_trabalho}</p>
+                        <div class="d-flex justify-content-between mt-3">
+                            <button class="btn btn-primary btn-sm" onclick="window.location.href='profissao_alterar.html?id_profissao=${item.id_profissao}'">Alterar</button>
+                            <button class="btn btn-danger btn-sm" onclick="excluir(${item.id_profissao})">Excluir</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        `;
+    });
 
-    html += `
-            </tbody>
-        </table>`;
-
+    html += '</div>';
     document.getElementById("lista").innerHTML = html;
 }
