@@ -1,3 +1,25 @@
+.bg-primary,
+.btn-primary {
+    background-color: #7a2bf2 !important;
+    border-color: #7a2bf2 !important;
+}
+
+.text-primary {
+    color: #7a2bf2 !important;
+}
+
+
+.bg-secondary,
+.btn-secondary {
+    background-color: #b32bf2 !important;
+    border-color: #c42bf2 !important;
+}
+
+.text-secondary {
+    color: #7c0a99 !important;
+}
+
+
 /* === RESET BÁSICO === */
 * {
     margin: 0;
@@ -132,3 +154,4 @@ main.container {
         padding: 8px 20px;
     }
 }
+

@@ -189,7 +189,7 @@ CREATE TABLE conta(
 -- Usuário
 CREATE TABLE usuario (
   id_usuario INT primary KEY auto_increment NOT NULL,
-  tipo_usuario VARCHAR(50) NOT NULL,-
+  tipo_usuario VARCHAR(50) NOT NULL,
   id_conta INT,
   FOREIGN KEY (id_conta) REFERENCES conta(id_conta)
 
@@ -338,10 +338,11 @@ CREATE TABLE gabarito (
 -- Quiz vocacional
 CREATE TABLE quiz_vocacional (
   id_quiz_vocacional INT AUTO_INCREMENT PRIMARY KEY,
-  id_usuario INT NOT NULL,
+  id_conta INT NOT NULL,
   data_realizacao DATETIME NOT NULL,
-  score INT,
-  FOREIGN KEY (id_usuario) REFERENCES usuario(id_usuario)
+  resultado VARCHAR(30),
+  comentarios_usuario TEXT,
+  FOREIGN KEY (id_conta) REFERENCES conta(id_conta)
 );
 
 CREATE TABLE quiz_profissao (
@@ -456,7 +457,7 @@ ALTER TABLE profissao MODIFY id_nivel_de_formacao INT NULL;
 ALTER TABLE forum MODIFY id_usuario INT NULL;
 
 INSERT INTO conta (nome, email, senha, data_nascimento, endereco, telefone)
-VALUES ('Administrador do Sistema', 'admin@profission.com', '1234', '1990-01-01', 'Rua Principal, 100', '(11)99999-9999');
+VALUES ('Administrador do Sistema', 'adm@gmail.com', '1234', '1990-01-01', 'Rua Principal, 100', '(11)99999-9999');
 
 INSERT INTO usuario (tipo_usuario, id_conta)
 VALUES ('adm', LAST_INSERT_ID());

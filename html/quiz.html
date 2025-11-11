@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quiz Vocacional - ProfissiON</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="../css/styles.css"> 
+</head>
+
+<body>
+    <nav class="navbar navbar-expand-sm ">
+        <div class="container-fluid">
+            <span class="navbar-brand" style="color:white;" >Quiz Vocacional</span>
+            <button onclick="window.location.href='home_logado.html'" class="btn btn-outline-light">Voltar para Home</button>
+        </div>
+    </nav>
+
+    <main class="container mt-4">
+        <h1 class="mb-4 text-center">Descubra Sua Área Profissional</h1>
+        
+        <div class="row">
+            
+            <div class="col-md-7">
+                <div class="card shadow-sm mb-4">
+                    <div class="card-header bg-primary text-white">
+                        <h4 class="mb-0" >Responda as Perguntas</h4>
+                    </div>
+                    <div class="card-body" id="quiz-area">
+                        </div>
+                    <div class="card-footer text-center" id="quiz-footer">
+                        <button class="btn btn-lg btn-success" id="btn-finalizar-quiz" style="display: none;">
+                            Finalizar e Ver Resultado
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-md-5">
+                <div class="card shadow-sm">
+                    <div class="card-header bg-secondary text-white">
+                        <h4 class="mb-0">Meus Resultados Anteriores</h4>
+                    </div>
+                    <ul class="list-group list-group-flush" id="lista-resultados">
+                        <li class="list-group-item text-center text-muted">Carregando seus resultados...</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <div class="modal fade" id="modalComentario" tabindex="-1">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="modalTitle">Parabéns! Seu Resultado é: <span id="resultado-final-modal"></span></h5>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+                    </div>
+                    <div class="modal-body">
+                        <p>O resultado foi salvo! Deixe seu comentário sobre a sugestão da sua área vocacional:</p>
+                        <textarea class="form-control" id="inputComentario" rows="3"></textarea>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Fechar</button>
+                        <button type="button" class="btn btn-success" id="btn-salvar-comentario">Salvar Comentário</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <script src="../js/valida_sessao.js"></script> 
+    
+    <script src="../js/quiz.js"></script>
+    
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
