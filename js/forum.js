@@ -10,11 +10,7 @@ document.addEventListener("DOMContentLoaded", () => {
     const inputEditNome = document.getElementById('edit-forum-nome');
     const inputEditConteudo = document.getElementById('edit-forum-conteudo');
 
-    // --- FUNÇÕES PRINCIPAIS ---
 
-    /**
-     * Carrega e exibe todos os tópicos do fórum (Estilo solicitado)
-     */
     async function carregarForums() {
         try {
             const retorno = await fetch('../php/forum_read.php');
@@ -31,7 +27,6 @@ document.addEventListener("DOMContentLoaded", () => {
 
                         const dataFormatada = new Date(forum.data_criacao).toLocaleString('pt-BR');
 
-                        // Mostra os botões SEMPRE (versão simplificada)
                         const botoesAcao = `
                             <div class="mt-3">
                                 <button class="btn btn-sm btn-outline-primary btn-editar" 
@@ -74,7 +69,7 @@ document.addEventListener("DOMContentLoaded", () => {
         }
     }
 
-    // --- FUNÇÕES DE AÇÃO (Com lógica fetch repetida) ---
+
 
     async function criarForum(event) {
         event.preventDefault();
@@ -92,8 +87,8 @@ document.addEventListener("DOMContentLoaded", () => {
             alert(resultado.mensagem);
 
             if (resultado.status === 'Ok') {
-                formCriar.reset(); // Limpa o form de criação
-                carregarForums(); // Recarrega a lista
+                formCriar.reset();
+                carregarForums();
             }
         } catch (error) {
             console.error(`Erro em forum_create.php:`, error);
@@ -118,8 +113,8 @@ document.addEventListener("DOMContentLoaded", () => {
             alert(resultado.mensagem);
 
             if (resultado.status === 'Ok') {
-                modalEdicao.hide(); // Fecha o modal
-                carregarForums(); // Recarrega a lista
+                modalEdicao.hide();
+                carregarForums();
             }
         } catch (error) {
             console.error(`Erro em forum_update.php:`, error);
@@ -152,16 +147,14 @@ document.addEventListener("DOMContentLoaded", () => {
         }
     }
 
-    // --- EVENT LISTENERS (Sem alterações) ---
 
-    carregarForums(); // Carga inicial
+    carregarForums();
 
     formCriar.addEventListener('submit', criarForum);
     formEdicao.addEventListener('submit', editarForum);
 
     listaForums.addEventListener('click', (event) => {
         if (event.target.classList.contains('btn-excluir')) {
-            // Note que aqui chamamos a função async, que vai cuidar de tudo
             excluirForum(event.target.dataset.id);
         }
     });

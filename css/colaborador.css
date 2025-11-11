@@ -13,7 +13,6 @@ body {
   color: #ffffff;
 }
 
-/* --- NAVBAR --- */
 .navbar {
   background: transparent;
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
@@ -52,8 +51,6 @@ body {
   border-radius: 50px;
   backdrop-filter: blur(10px);
 }
-
-/* --- PAGE HEADER --- */
 .page-header {
   background: rgba(255, 255, 255, 0.1);
   backdrop-filter: blur(15px);
@@ -68,7 +65,6 @@ body {
   margin-bottom: 0.5rem;
 }
 
-/* --- STATISTICS CARDS --- */
 .stats-card {
   background: rgba(255, 255, 255, 0.1);
   backdrop-filter: blur(15px);
@@ -154,7 +150,6 @@ body {
   padding: 2rem;
 }
 
-/* --- FORM ELEMENTS --- */
 .form-label {
   font-weight: 600;
   color: #ffffff;
@@ -183,7 +178,6 @@ body {
   outline: none;
 }
 
-/* --- BUTTONS --- */
 .btn {
   border-radius: 10px;
   padding: 0.75rem 1.5rem;
@@ -216,7 +210,6 @@ body {
   color: #ffffff;
 }
 
-/* --- TABLE CARD --- */
 .table-card {
   background: rgba(255, 255, 255, 0.1);
   backdrop-filter: blur(15px);
@@ -241,7 +234,6 @@ body {
   font-weight: 600;
 }
 
-/* --- TABLE --- */
 .table {
   margin: 0;
 }
@@ -268,7 +260,6 @@ body {
   background: rgba(255, 255, 255, 0.05);
 }
 
-/* --- BADGES --- */
 .badge {
   padding: 0.4rem 0.8rem;
   border-radius: 6px;
@@ -298,7 +289,6 @@ body {
   color: #fff;
 }
 
-/* --- RESPONSIVE --- */
 @media (max-width: 768px) {
   .search-box {
     min-width: 100%;
@@ -344,4 +334,22 @@ body {
 .navbar button:focus {
   outline: none;
   box-shadow: none;
+}
+
+.tabela-branca tbody td {
+  background-color: #ffffff !important;
+  color: #212529 !important;
+}
+
+.tabela-branca thead th,
+.tabela-branca tbody td {
+  border-color: #dee2e6 !important;
+}
+
+
+.tabela-branca tbody tr:hover td {
+  background-color: #f8f9fa !important;
+
+  color: #212529 !important;
+
 }

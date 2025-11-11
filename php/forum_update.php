@@ -1,5 +1,4 @@
 <?php
-// session_start(); // Não precisamos mais de sessão
 include_once("conexao.php");
 
 $id_forum = $_POST['id_forum'] ?? 0;
@@ -8,7 +7,6 @@ $conteudo = $_POST['conteudo'] ?? '';
 
 $retorno = ["status" => "", "mensagem" => ""];
 
-// MODIFICADO: Removemos a checagem 'AND id_usuario = ?'
 $stmt = $conexao->prepare("UPDATE forum SET titulo = ?, conteudo_inicial = ? WHERE id_forum = ?");
 $stmt->bind_param("ssi", $titulo, $conteudo, $id_forum);
 $stmt->execute();

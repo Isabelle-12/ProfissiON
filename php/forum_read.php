@@ -7,7 +7,6 @@ $retorno = [
     "data" => []
 ];
 
-// MODIFICADO: Removemos o JOIN com a tabela 'conta' ou 'usuario'
 $sql = "SELECT id_forum, titulo, conteudo_inicial, data_criacao 
         FROM forum
         ORDER BY data_criacao DESC";

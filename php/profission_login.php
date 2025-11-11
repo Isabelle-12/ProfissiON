@@ -22,9 +22,7 @@ if ($resultado->num_rows > 0) {
         $tabela[] = $linha;
     }
 
-    // Preenche a sessão com campos específicos (id_conta e email)
     $_SESSION['email'] = $tabela[0]['email'];
-    // Alguns registros podem nomear a PK diferente; assumimos 'id_conta' conforme uso em profission_get.php
     if (isset($tabela[0]['id_conta'])) {
         $_SESSION['id_conta'] = (int)$tabela[0]['id_conta'];
     }

@@ -1,8 +1,6 @@
 <?php
-// session_start(); // Não precisamos mais de sessão aqui
 include_once("conexao.php");
 
-// Pega os dados do POST
 $titulo = $_POST['nome'] ?? '';
 $conteudo = $_POST['conteudo'] ?? '';
 
@@ -13,9 +11,8 @@ if (empty($titulo) || empty($conteudo)) {
 
 $retorno = ["status" => "", "mensagem" => ""];
 
-// MODIFICADO: Estamos inserindo NULL no id_usuario
 $stmt = $conexao->prepare("INSERT INTO forum (titulo, conteudo_inicial, id_usuario) VALUES (?, ?, NULL)");
-$stmt->bind_param("ss", $titulo, $conteudo); // Só bindamos os dois strings
+$stmt->bind_param("ss", $titulo, $conteudo); 
 
 if ($stmt->execute()) {
     $retorno["status"] = "Ok";
