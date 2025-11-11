@@ -1,4 +1,4 @@
-CREATE DATABASE IF NOT EXISTS profissionn
+CREATE DATABASE IF NOT EXISTS profission
   DEFAULT CHARACTER SET utf8mb4
   DEFAULT COLLATE utf8mb4_general_ci;
 
@@ -453,4 +453,5 @@ ALTER TABLE profissao MODIFY id_requisitos_experiencia INT NULL;
 ALTER TABLE profissao MODIFY id_perspectivas_futuras INT NULL;
 ALTER TABLE profissao MODIFY id_nivel_de_formacao INT NULL;
 
+ALTER TABLE forum MODIFY id_usuario INT NULL;
 
