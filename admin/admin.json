@@ -1,0 +1,14 @@
+[
+    {
+        "nome": "Super Admin",
+        "email": "adm@gmail.com",
+        "senha": "adm123",
+        "tipo": "admin"
+    },
+    {
+        "nome": "Funcionario 2",
+        "email": "func2@gmail.com",
+        "senha": "func2",
+        "tipo": "admin"
+    }
+]

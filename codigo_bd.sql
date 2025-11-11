@@ -1,4 +1,4 @@
-CREATE DATABASE IF NOT EXISTS profissionn
+CREATE DATABASE IF NOT EXISTS profission
   DEFAULT CHARACTER SET utf8mb4
   DEFAULT COLLATE utf8mb4_general_ci;
 
@@ -189,7 +189,7 @@ CREATE TABLE conta(
 -- Usuário
 CREATE TABLE usuario (
   id_usuario INT primary KEY auto_increment NOT NULL,
-  tipo_usuario VARCHAR(50) NOT NULL,
+  tipo_usuario VARCHAR(50) NOT NULL,-
   id_conta INT,
   FOREIGN KEY (id_conta) REFERENCES conta(id_conta)
 
@@ -454,3 +454,8 @@ ALTER TABLE profissao MODIFY id_perspectivas_futuras INT NULL;
 ALTER TABLE profissao MODIFY id_nivel_de_formacao INT NULL;
 
 
+INSERT INTO conta (nome, email, senha, data_nascimento, endereco, telefone)
+VALUES ('Administrador do Sistema', 'admin@profission.com', '1234', '1990-01-01', 'Rua Principal, 100', '(11)99999-9999');
+
+INSERT INTO usuario (tipo_usuario, id_conta)
+VALUES ('adm', LAST_INSERT_ID());

@@ -1,53 +1,65 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-br">
 
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Painel Admin - Gerenciar Usuários</title>
+    <title>Painel Admin - ProfissiON</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="../css/styles.css"> 
 </head>
 
 <body>
-    <main>
-        <nav class="navbar navbar-expand-sm bg-dark navbar-dark">
-            <div class="container-fluid d-flex align-items-center">
-                <div class="d-flex align-items-center">
-                    <img src="../img/Imagem_usuario.png" alt="Avatar Logo" style="width:40px;"
-                        class="rounded-pill me-2">
-                    <span id="usuario_nome1" class="mb-0 text-white"></span>
-                    <span class="badge bg-warning ms-2">ADMIN</span>
-                </div>
-                <a href="forum.html" class="btn btn-primary">Ir para o forum</a>
-                <a href="profissao.html" class="btn btn-success">Gerenciar Profissões</a>
-                <a href="colaborador.html" class="btn btn-outline-light me-2">Ir para o colaborador</a>
-                <button id="botaoSair" class="btn btn-danger">Sair</button>
-
+    <nav class="navbar navbar-expand-sm navbar-dark bg-dark">
+        <div class="container-fluid">
+            <div class="d-flex align-items-center">
+                <span id="usuario_nome1" class="navbar-brand me-2">Admin Panel</span>
+                <span class="badge bg-warning text-dark">Acesso Administrativo</span>
             </div>
-        </nav>
-        <div class="d-flex justify-content-center">
-            <div class="flex-column">
 
-                <div class="card mt-4" style="width:350px">
-                    <img class="card-img-top p-5" src="../img/Imagem_usuario.png" alt="Card image">
+            <div class="d-flex">
+                <a href="profissao.html" class="btn btn-outline-light me-2">Gerenciar Profissões</a>
+                <a href="admin_login.html" id="botaoSair" class="btn btn-danger">Sair</a>
+            </div>
+        </div>
+    </nav>
+
+    <main class="container mt-4">
+        <h1 class="mb-4">Dashboard de Administração</h1>
+        
+        <div class="row">
+            <div class="col-md-4">
+                <div class="card shadow-sm">
+                    <img class="card-img-top p-5" src="../img/Imagem_usuario.png" alt="Avatar Admin">
                     <div class="card-body">
-                        <h4 class="card-title" id="usuario_nome_card"></h4>
-                        <p class="card-text" id="Email_usuario"></p>
-                        <p class="card-text">Status: Logado como ADMIN</p>
-                        <button id="botaoEditarProprio" class="btn btn-primary mb-2">Editar Meu Perfil</button>
+                        <h4 class="card-title" id="usuario_nome_card">Nome do Admin</h4>
+                        <p class="card-text text-muted" id="Email_usuario">email@admin.com</p>
+                        <p class="card-text">Status: **Administrador**</p>
                     </div>
                 </div>
+            </div>
 
-                <div id="admin-panel" class="card mt-4 p-3 w-100" style="min-width: 350px;">
-                    <h3 class="card-title">Gerenciar Usuários Comuns</h3>
+            <div class="col-md-8">
+                <div id="admin-panel" class="card shadow-sm p-3">
+                    <h3 class="card-title">👥 Gerenciar Todas as Contas</h3>
+                    <p class="card-text text-muted">Abaixo está a lista completa de contas (usuários comuns e outros admins).</p>
+                    
+                    <a href="admin_create_admin.html" class="btn btn-success mb-3">
+                        + Criar Novo Administrador
+                    </a>
+                    
                     <ul class="list-group list-group-flush" id="lista-usuarios-admin">
+                        <li class="list-group-item text-center text-muted">Carregando lista de contas...</li>
                     </ul>
                 </div>
             </div>
         </div>
     </main>
-    <script src="../js/valida_sessao.js"></script>
+
+    <script src="../js/valida_sessao_admin.js"></script> 
+    
     <script src="../js/admin_home.js"></script>
+    
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 
