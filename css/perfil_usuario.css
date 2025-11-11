@@ -172,3 +172,26 @@ body {
         width: 100%;
     }
 }
+
+.navbar button {
+    display: flex;
+    background-color: transparent;
+    color: white;
+    border: none;
+    padding: 8px 18px;
+    margin: 3px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    gap: 10px;
+}
+
+.navbar button:hover {
+    color: #0b0f27;
+    transform: scale(1.05);
+}
+
+.navbar button:focus {
+    outline: none;
+    box-shadow: none;
+}
