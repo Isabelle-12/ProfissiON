@@ -1,4 +1,4 @@
-w<?php
+<?php
     include_once('conexao.php');
     $retorno = [
         'status'    => '', 
