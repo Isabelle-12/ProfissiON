@@ -15,7 +15,7 @@ async function verificarLoginAdmin() {
     fd.append("email", email);
     fd.append("senha", senha);
 
-    // Envia para o novo script de login de admin
+    
     const retorno = await fetch("../php/admin_login.php", {
         method: "POST",
         body: fd
@@ -24,10 +24,10 @@ async function verificarLoginAdmin() {
     const resposta = await retorno.json();
     
     if (resposta.status == "Ok") {
-        // Sucesso, redireciona para o painel de admin
+        
         window.location.href = "../html/admin_home.html";
     } else {
-        // Exibe a mensagem de erro (Ex: "Credenciais inválidas" ou "Não é admin")
+        
         alert("Erro: " + resposta.mensagem);
     }
 }

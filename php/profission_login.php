@@ -1,5 +1,5 @@
 <?php
-// Inicia a sessão antes de qualquer saída
+
 session_start();
 include_once("conexao.php");
 

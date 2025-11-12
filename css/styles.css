@@ -20,7 +20,7 @@
 }
 
 
-/* === RESET BÁSICO === */
+
 * {
     margin: 0;
     padding: 0;
@@ -28,7 +28,7 @@
     font-family: "Poppins", sans-serif;
 }
 
-/* === ESTILO GERAL === */
+
 body {
     min-height: 100vh;
     background: linear-gradient(180deg, #7a2bf2, #0b0f27);
@@ -39,17 +39,14 @@ body {
     overflow-x: hidden;
 }
 
-/* === NAVBAR === */
+
 
 
 .navbar button {
     display: flex;
     background-color: transparent;
-    /* fundo transparente */
     color: white;
-    /* cor do texto */
     border: none;
-    /* sem borda */
     padding: 8px 18px;
     margin: 3px;
     font-weight: 600;
@@ -59,21 +56,20 @@ body {
 
 }
 
-/* Efeito hover */
+
 .navbar button:hover {
     color: #0b0f27;
     transform: scale(1.05);
-    /* leve aumento */
 }
 
-/* Remove o estilo padrão do botão */
+
 .navbar button:focus {
     outline: none;
     box-shadow: none;
 }
 
 
-/* === CONTEÚDO PRINCIPAL === */
+
 main.container {
     flex: 1;
     display: flex;
@@ -86,7 +82,7 @@ main.container {
     text-align: left;
 }
 
-/* === TEXTO === */
+
 .texto {
     flex: 1;
     min-width: 280px;
@@ -103,7 +99,7 @@ main.container {
     color: #00c4ff;
 }
 
-/* === IMAGEM === */
+
 .imagem {
     flex: 1;
     display: flex;
@@ -122,13 +118,13 @@ main.container {
     transform: scale(1.05);
 }
 
-/* === RESPONSIVIDADE === */
+
 @media (max-width: 992px) {
     main.container {
         flex-direction: column;
         text-align: center;
         padding-top: 100px;
-        /* para não colar na navbar */
+
     }
 
     .texto h2 {

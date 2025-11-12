@@ -4,10 +4,10 @@ include_once("conexao.php");
 
 $retorno = ["status" => "Erro", "mensagem" => "Acesso não autorizado ou dados incompletos."];
 
-// 1. Verifica se o usuário logado é ADMIN
+
 if (isset($_SESSION['tipo_usuario']) && $_SESSION['tipo_usuario'] === 'adm') {
 
-    // 2. Pega os dados do POST
+    
     $id_conta_para_alterar = isset($_POST['id_conta']) ? (int)$_POST['id_conta'] : 0;
     $nome = isset($_POST['nome']) ? $_POST['nome'] : '';
     $email = isset($_POST['email']) ? $_POST['email'] : '';
@@ -17,22 +17,21 @@ if (isset($_SESSION['tipo_usuario']) && $_SESSION['tipo_usuario'] === 'adm') {
 
     if ($id_conta_para_alterar > 0) {
         
-        // 3. VERIFICAÇÃO DE DUPLICIDADE (CHAVE CRÍTICA)
-        // Busca se o novo email já existe em OUTRA conta.
+       
         $stmt_check = $conexao->prepare("SELECT id_conta FROM conta WHERE email = ? AND id_conta != ?");
         $stmt_check->bind_param("si", $email, $id_conta_para_alterar);
         $stmt_check->execute();
         $resultado_check = $stmt_check->get_result();
         
         if ($resultado_check->num_rows > 0) {
-            // Email já pertence a outra conta! Retorna o erro imediatamente.
+            
             $retorno = ["status" => "Erro", "mensagem" => "Erro: O e-mail '$email' já está em uso por outra conta."];
             $stmt_check->close();
         } else {
-            // E-mail é único (ou é o e-mail original), pode prosseguir com o UPDATE.
+            
             $stmt_check->close();
 
-            // 4. Executa a query de atualização
+            
             $stmt_update = $conexao->prepare(
                 "UPDATE conta SET nome = ?, email = ?, data_nascimento = ?, endereco = ?, telefone = ? 
                  WHERE id_conta = ?"
@@ -46,7 +45,7 @@ if (isset($_SESSION['tipo_usuario']) && $_SESSION['tipo_usuario'] === 'adm') {
                     $retorno = ["status" => "No", "mensagem" => "Nenhum dado foi modificado."];
                 }
             } else {
-                // Caso haja algum outro erro de banco (não de duplicidade, pois já checamos)
+                
                 $retorno = ["status" => "Erro", "mensagem" => "Erro ao executar a atualização: " . $stmt_update->error];
             }
             $stmt_update->close();

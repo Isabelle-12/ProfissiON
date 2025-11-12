@@ -4,12 +4,12 @@ include_once("conexao.php");
 
 $retorno = ["status" => "Erro", "mensagem" => "Acesso não autorizado.", "data" => []];
 
-// Verifica se o usuário está logado
+
 if (isset($_SESSION['id_conta'])) {
     
     $id_conta = (int)$_SESSION['id_conta'];
 
-    // Busca todos os resultados daquele ID de conta
+ 
     $stmt = $conexao->prepare(
         "SELECT id_quiz_vocacional, data_realizacao, resultado, comentarios_usuario 
          FROM quiz_vocacional 

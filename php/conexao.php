@@ -1,6 +1,5 @@
 <?php
 
-// Declaração das variáveis do Servidor
 $servidor = "localhost:3306";
 $usuario  = "programador";
 $senha    = "1234";

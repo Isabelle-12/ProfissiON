@@ -1,7 +1,6 @@
 <?php
     session_start();
 
-    // A mágica está aqui: verifica o TIPO de usuário
     if (isset($_SESSION['tipo_usuario']) && $_SESSION['tipo_usuario'] === 'adm') {
         $retorno = [
             'status'        => 'ok',
@@ -10,7 +9,7 @@
         ];
 
     } else {
-        // Se não for 'adm', manda sair
+
         $retorno = [
             'status'        => 'No',
             'mensagem'      => 'Acesso não autorizado.',

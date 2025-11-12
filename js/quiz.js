@@ -1,4 +1,4 @@
-// Estrutura do Quiz (10 Perguntas)
+
 const perguntas = [
     {
         pergunta: "1. Você se sente mais motivado(a) por...",
@@ -45,7 +45,6 @@ const perguntas = [
             D: { texto: "D) A estética e a usabilidade visual.", area: "Design Gráfico" }
         }
     }
-    // Para 10 perguntas, adicione mais 5 objetos de pergunta aqui
 ];
 
 const pontos = {
@@ -58,10 +57,9 @@ const pontos = {
 };
 
 let resultadoFinalArea = "";
-let resultadoIdSalvo = null; // ID do registro recém-criado para salvar o comentário
+let resultadoIdSalvo = null;
 
 document.addEventListener("DOMContentLoaded", () => {
-    // valida_sessao() é chamado no HTML
     iniciarQuiz();
     carregarResultadosAnteriores();
 
@@ -69,13 +67,10 @@ document.addEventListener("DOMContentLoaded", () => {
     document.getElementById("btn-salvar-comentario").addEventListener("click", salvarComentario);
 });
 
-// =========================================================
-// LÓGICA DO QUIZ
-// =========================================================
 
 function iniciarQuiz() {
     const quizArea = document.getElementById("quiz-area");
-    quizArea.innerHTML = ''; // Limpa a área
+    quizArea.innerHTML = ''; 
 
     perguntas.forEach((p, index) => {
         const divPergunta = document.createElement('div');
@@ -96,7 +91,6 @@ function iniciarQuiz() {
         quizArea.appendChild(divPergunta);
     });
     
-    // Adiciona o listener para contar as respostas
     quizArea.addEventListener('change', verificarRespostas);
 }
 
@@ -114,10 +108,8 @@ function verificarRespostas() {
 }
 
 function calcularResultado() {
-    // Zera os pontos
     Object.keys(pontos).forEach(area => pontos[area] = 0); 
     
-    // Conta os pontos
     perguntas.forEach((_, index) => {
         const resposta = document.querySelector(`input[name="pergunta-${index}"]:checked`);
         if (resposta) {
@@ -126,7 +118,6 @@ function calcularResultado() {
         }
     });
 
-    // Encontra a área com a maior pontuação
     let areaVencedora = "Indefinida";
     let maxPontos = -1;
     
@@ -135,7 +126,6 @@ function calcularResultado() {
             maxPontos = pontos[area];
             areaVencedora = area;
         } else if (pontos[area] === maxPontos) {
-            // Caso de empate (mantém a área já definida)
             areaVencedora = "Empate/Múltiplas Áreas"; 
         }
     }
@@ -146,7 +136,6 @@ function calcularResultado() {
 async function finalizarQuiz() {
     resultadoFinalArea = calcularResultado();
     
-    // 1. Salva o resultado preliminar (sem comentário)
     const fd = new FormData();
     fd.append("resultado", resultadoFinalArea);
     
@@ -157,10 +146,9 @@ async function finalizarQuiz() {
     const resposta = await retorno.json();
 
     if (resposta.status === "Ok") {
-        resultadoIdSalvo = resposta.id_quiz_vocacional; // Pega o ID para o comentário
+        resultadoIdSalvo = resposta.id_quiz_vocacional;
         document.getElementById("resultado-final-modal").textContent = resultadoFinalArea;
         
-        // Exibe o modal para o comentário
         const modal = new bootstrap.Modal(document.getElementById('modalComentario'));
         modal.show();
     } else {
@@ -180,7 +168,6 @@ async function salvarComentario() {
     fd.append("id_quiz_vocacional", resultadoIdSalvo);
     fd.append("comentarios_usuario", comentario);
 
-    // Usa o script de UPDATE do CRUD
     const retorno = await fetch("../php/quiz_update_comment.php", {
         method: "POST",
         body: fd
@@ -189,12 +176,10 @@ async function salvarComentario() {
 
     if (resposta.status === "Ok") {
         alert("Comentário salvo com sucesso!");
-        // Oculta o modal e recarrega a lista
         const modal = bootstrap.Modal.getInstance(document.getElementById('modalComentario'));
         modal.hide();
         carregarResultadosAnteriores();
         
-        // Reinicia o quiz (opcional)
         iniciarQuiz();
         document.getElementById("btn-finalizar-quiz").style.display = 'none';
 
@@ -203,9 +188,6 @@ async function salvarComentario() {
     }
 }
 
-// =========================================================
-// LÓGICA DO CRUD (READ, UPDATE, DELETE)
-// =========================================================
 
 async function carregarResultadosAnteriores() {
     const listaUl = document.getElementById("lista-resultados");
@@ -255,11 +237,11 @@ function formatarData(data) {
     return `${d.toLocaleDateString()} ${d.toLocaleTimeString()}`;
 }
 
-// UPDATE: Inicia a Edição do Comentário
+
 function iniciarEdicaoComentario(id, comentarioAtual) {
     const novoComentario = prompt("Edite seu comentário para o resultado:", comentarioAtual);
     
-    if (novoComentario !== null) { // Se o usuário não clicou em cancelar
+    if (novoComentario !== null) { 
         salvarNovoComentario(id, novoComentario);
     }
 }
@@ -277,14 +259,12 @@ async function salvarNovoComentario(id, novoComentario) {
 
     if (resposta.status === "Ok") {
         alert("Comentário atualizado com sucesso!");
-        // Atualiza o texto na lista sem recarregar tudo (UX)
         document.getElementById(`comentario-${id}`).textContent = novoComentario || 'Nenhum comentário.';
     } else {
         alert("Erro ao atualizar: " + resposta.mensagem);
     }
 }
 
-// DELETE: Excluir Resultado
 async function excluirResultado(id) {
     if (!confirm("Tem certeza que deseja excluir este resultado do quiz?")) {
         return;
@@ -294,7 +274,7 @@ async function excluirResultado(id) {
     fd.append("id_quiz_vocacional", id);
 
     const retorno = await fetch("../php/quiz_delete.php", {
-        method: "POST", // DELETE via POST
+        method: "POST",
         body: fd
     });
     
@@ -302,7 +282,7 @@ async function excluirResultado(id) {
 
     if (resposta.status === "Ok") {
         alert("Resultado excluído com sucesso!");
-        carregarResultadosAnteriores(); // Recarrega a lista
+        carregarResultadosAnteriores();
     } else {
         alert("Erro ao excluir: " + resposta.mensagem);
     }

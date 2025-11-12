@@ -4,14 +4,14 @@ include_once("conexao.php");
 
 $retorno = ["status" => "Erro", "mensagem" => "Acesso não autorizado."];
 
-// Verifica se o usuário está logado
+
 if (isset($_SESSION['id_conta'])) {
 
     $id_conta = (int)$_SESSION['id_conta'];
     $resultado = $_POST['resultado'] ?? 'N/A';
-    $data_realizacao = date('Y-m-d H:i:s'); // Data e hora atual
+    $data_realizacao = date('Y-m-d H:i:s');
 
-    // O comentário é deixado em branco, será atualizado no próximo passo
+
     $comentarios_usuario = ""; 
 
     $stmt = $conexao->prepare(
@@ -25,7 +25,7 @@ if (isset($_SESSION['id_conta'])) {
         $retorno = [
             "status" => "Ok", 
             "mensagem" => "Resultado do quiz salvo.", 
-            "id_quiz_vocacional" => $novo_id // Retorna o ID para a próxima operação
+            "id_quiz_vocacional" => $novo_id
         ];
     } else {
         $retorno = ["status" => "Erro", "mensagem" => "Erro ao salvar: " . $stmt->error];

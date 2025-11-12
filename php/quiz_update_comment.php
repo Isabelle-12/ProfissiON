@@ -4,14 +4,14 @@ include_once("conexao.php");
 
 $retorno = ["status" => "Erro", "mensagem" => "Acesso não autorizado."];
 
-// Verifica se o usuário está logado e se o ID e o comentário foram enviados
+
 if (isset($_SESSION['id_conta']) && isset($_POST['id_quiz_vocacional']) && isset($_POST['comentarios_usuario'])) {
 
     $id_conta = (int)$_SESSION['id_conta'];
     $id_quiz = (int)$_POST['id_quiz_vocacional'];
     $comentario = $_POST['comentarios_usuario'];
 
-    // Garante que APENAS o dono da conta possa alterar o registro
+ 
     $stmt = $conexao->prepare(
         "UPDATE quiz_vocacional 
          SET comentarios_usuario = ? 

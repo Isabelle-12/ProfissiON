@@ -1,4 +1,4 @@
-/* === RESET BÁSICO === */
+
 * {
     margin: 0;
     padding: 0;
@@ -6,7 +6,7 @@
     font-family: "Noto Sans", sans-serif;
 }
 
-/* === ESTILO GERAL === */
+
 body {
     min-height: 100vh;
     background: linear-gradient(180deg, #7a2bf2, #0b0f27);
@@ -16,7 +16,7 @@ body {
     padding: 20px;
 }
 
-/* === CABEÇALHO === */
+
 header {
     text-align: center;
     margin-bottom: 40px;
@@ -30,7 +30,7 @@ header h1 {
 
 header p {
     font-size: 1.1rem;
-    color: #cfd8dc; /* cinza claro */
+    color: #cfd8dc;
     margin-bottom: 20px;
 }
 
@@ -50,7 +50,7 @@ header .btn:hover {
     transform: scale(1.05);
 }
 
-/* === CARD DO FORMULÁRIO === */
+
 .card {
     background: rgba(255, 255, 255, 0.1);
     backdrop-filter: blur(15px);
@@ -66,7 +66,7 @@ header .btn:hover {
     transform: translateY(-2px);
 }
 
-/* === TÍTULOS E LABELS === */
+
 .card-title, h2 {
     color: #fff;
     font-weight: 600;
@@ -79,7 +79,7 @@ label {
     color: #fff;
 }
 
-/* === CAMPOS DE FORMULÁRIO === */
+
 .form-control {
     background-color: rgb(255, 255, 255);
     border: 1px solid rgba(255, 255, 255, 0.3);
@@ -95,7 +95,7 @@ label {
     box-shadow: 0 0 0 3px rgba(255, 255, 255, 0.2);
 }
 
-/* === BOTÕES === */
+
 .btn-primary {
     background-color: #fff;
     color: #7a2bf2;
@@ -121,7 +121,7 @@ label {
     background-color: rgba(255, 255, 255, 0.5);
 }
 
-/* === LISTA DE TÓPICOS === */
+
 #lista-forums {
     display: flex;
     flex-direction: column;
@@ -152,7 +152,7 @@ label {
     font-size: 0.95rem;
 }
 
-/* === ALERTA DE VAZIO === */
+
 .alert-info {
     background-color: rgba(255,255,255,0.2);
     color: #fff;
@@ -161,7 +161,7 @@ label {
     border-radius: 8px;
 }
 
-/* === MODAL === */
+
 .modal-content {
     background: rgba(255, 255, 255, 0.1);
     backdrop-filter: blur(15px);
@@ -175,7 +175,7 @@ label {
     border-bottom: 1px solid rgba(255, 255, 255, 0.2);
 }
 
-/* === RESPONSIVIDADE === */
+
 @media (max-width: 768px) {
     header h1 {
         font-size: 2rem;

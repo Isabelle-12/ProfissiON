@@ -9,7 +9,7 @@ body {
     font-family: 'Segoe UI', sans-serif;
 }
 
-/* === NAVBAR === */
+
 .navbar button {
     display: flex;
     background-color: transparent;
@@ -33,7 +33,7 @@ body {
     box-shadow: none;
 }
 
-/* === CARDS GLASSMORPHISM === */
+
 .card {
     background: rgba(255, 255, 255, 0.1);
     backdrop-filter: blur(15px);
@@ -51,15 +51,14 @@ body {
     box-shadow: 0 12px 40px rgba(0, 0, 0, 0.4);
 }
 
-/* Botão Novo Registro */
-/* Container do botão */
+
 #lista-container {
     display: flex;
-    justify-content: flex-end; /* alinha o botão à direita */
+    justify-content: flex-end; 
     margin-bottom: 20px;
 }
 
-/* Botão Novo Registro */
+
 #novo {
     background: rgba(255, 255, 255, 0.1);
     backdrop-filter: blur(15px);
@@ -78,18 +77,16 @@ body {
     box-shadow: 0 8px 20px rgba(0, 0, 0, 0.35);
 }
 
-/* Container de cards */
+
 #lista .row {
     display: flex;
     flex-wrap: wrap;
     gap: 20px;
     margin-top: 20px;
-
-    /* centralizar os cards horizontalmente */
     justify-content: center;
 }
 
-/* Card content text */
+
 .card h5 {
     font-weight: 700;
     margin-bottom: 10px;
@@ -100,7 +97,7 @@ body {
     margin-bottom: 6px;
 }
 
-/* Botões dentro do card */
+
 .card .btn {
     font-size: 0.8rem;
     padding: 6px 12px;

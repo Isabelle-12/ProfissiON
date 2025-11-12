@@ -1,9 +1,8 @@
 document.addEventListener("DOMContentLoaded", () => {
-    // valida_sessao() é chamado pelo HTML
 });
 
 document.getElementById("form-criar-admin").addEventListener("submit", function(event) {
-    event.preventDefault(); // Impede o envio padrão
+    event.preventDefault(); 
     salvarNovoAdmin();
 });
 

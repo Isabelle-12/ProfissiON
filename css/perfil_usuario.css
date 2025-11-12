@@ -1,28 +1,21 @@
-/* Importa a fonte Poppins que você pediu */
+
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap');
 
-/* === ESTILO GERAL === */
+
 body {
     min-height: 100vh;
-    /* O gradiente que você queria */
     background: linear-gradient(180deg, #7a2bf2, #0b0f27);
     color: #fff;
     overflow-x: hidden;
-    /* Previne scroll horizontal */
-    font-family: "Poppins", sans-serif;
-    /* Aplica a fonte Poppins */
 }
 
-/* === NAVBAR === */
-/* Estilo dos botões da navbar (do seu CSS) */
+
 .navbar button {
     display: flex;
     background-color: transparent;
     color: white;
     border: 1px solid transparent;
-    /* Adicionei para um hover mais suave */
     border-radius: 8px;
-    /* Arredondei */
     padding: 8px 18px;
     margin: 3px;
     font-weight: 600;
@@ -31,12 +24,10 @@ body {
     gap: 10px;
 }
 
-/* Efeito hover (AJUSTADO para funcionar) */
+
 .navbar button:hover {
     background-color: white;
-    /* Fundo branco ao passar o mouse */
     color: #0b0f27;
-    /* Texto escuro */
     transform: scale(1.05);
 }
 
@@ -45,22 +36,15 @@ body {
     box-shadow: none;
 }
 
-/* === ESTILOS DO FORMULÁRIO (das nossas conversas anteriores) === */
-
-/* Container principal que centraliza o card */
 .main-login {
     width: 100%;
-    /* Garante que ocupe pelo menos a altura da tela, 
-       mas permite crescer se o conteúdo for maior */
     min-height: calc(100vh - 80px);
-    /* Desconta a altura aprox. da navbar */
     display: flex;
     justify-content: center;
     align-items: center;
     padding: 20px;
 }
 
-/* Estilo do Card de Login */
 .card-login {
     width: 90%;
     max-width: 850px;
@@ -72,18 +56,18 @@ body {
     padding: 15px 20px;
 }
 
-/* Títulos dentro do card */
+
 .card-login .h3 {
     color: #fff;
     font-weight: 700;
 }
 
-/* Coluna da esquerda (imagem) */
+
 .col-md-6.text-white .lead {
     color: rgba(255, 255, 255, 0.8);
 }
 
-/* Labels dos campos (Nome, Email, etc) */
+
 .textfield label {
     color: rgba(255, 255, 255, 0.9);
     margin-bottom: 5px;
@@ -91,37 +75,30 @@ body {
     font-size: 0.9rem;
 }
 
-/* Campos de Input (SÓLIDOS, como pedito) */
+
 .textfield .form-control {
     width: 100%;
     border: 1px solid #4a3b6d;
     background-color: #2a1a4d;
-    /* Fundo sólido */
     border-radius: 8px;
     padding: 12px 15px;
     font-size: 1rem;
     color: #fff;
-    /* Texto digitado branco */
     outline: none;
     transition: all 0.3s ease;
 }
 
-/* Placeholder (texto "dica" dentro do input) */
 .textfield .form-control::placeholder {
     color: rgba(255, 255, 255, 0.5);
 }
 
-/* Foco nos inputs */
 .textfield .form-control:focus {
     background-color: #3b2a5d;
-    /* Fundo sólido mais claro ao focar */
     border-color: #7a2bf2;
-    /* Borda roxa */
     box-shadow: 0 0 0 0.2rem rgba(122, 43, 242, 0.3);
     color: #fff;
 }
 
-/* Botão de Cadastrar (ROXO, como pedido) */
 .btn-login {
     width: 100%;
     padding: 14px 0px;
@@ -131,9 +108,7 @@ body {
     font-weight: 700;
     letter-spacing: 1.5px;
     color: #ffffff;
-    /* Texto branco */
     background-color: #7a2bf2;
-    /* Fundo roxo */
     cursor: pointer;
     box-shadow: 0px 8px 20px rgba(0, 0, 0, 0.3);
     transition: all 0.3s ease;
@@ -142,16 +117,13 @@ body {
 
 .btn-login:hover {
     background-color: #8c4bff;
-    /* Roxo mais claro no hover */
     color: #ffffff;
     transform: translateY(-1px);
     box-shadow: 0px 6px 15px rgba(0, 0, 0, 0.2);
 }
-
-/* --- RESPONSIVIDADE --- */
 @media (max-width: 767.98px) {
 
-    /* Esconde a coluna da esquerda (com logo) em telas pequenas */
+
     .d-md-block {
         display: none !important;
     }
@@ -165,7 +137,6 @@ body {
         width: 95%;
     }
 
-    /* Centraliza a navbar em telas pequenas */
     .navbar-nav {
         flex-direction: row;
         justify-content: center;

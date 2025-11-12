@@ -4,13 +4,12 @@ include_once("conexao.php");
 
 $retorno = ["status" => "Erro", "mensagem" => "Acesso não autorizado."];
 
-// Verifica se o usuário está logado e se o ID foi enviado
+
 if (isset($_SESSION['id_conta']) && isset($_POST['id_quiz_vocacional'])) {
 
     $id_conta = (int)$_SESSION['id_conta'];
     $id_quiz = (int)$_POST['id_quiz_vocacional'];
 
-    // Garante que APENAS o dono da conta possa excluir o registro
     $stmt = $conexao->prepare(
         "DELETE FROM quiz_vocacional 
          WHERE id_quiz_vocacional = ? AND id_conta = ?"
